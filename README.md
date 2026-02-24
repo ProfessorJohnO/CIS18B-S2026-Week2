@@ -1,4 +1,4 @@
-# Week 1 – Modern Java Refresher & Development Workflow
+# Week 2 – Modern Java Refresher & Development Workflow
 
 ## Overview
 
@@ -31,7 +31,7 @@ You can raise a pull request once, and then continue to commit multiple times af
 
 NOTE: While you can use the `javac` and `java` commands to compile and run your project, we'll start with professional tools early and often in this course by using maven to build and run your app.
 
-Checkout the the `pom.xml` file in the root of this repository if you'd like to get a better understanding of how this project is structured.
+Take a look at the `pom.xml` file in the root of this repository if you'd like to get a better understanding of how this project is structured.
 
 For now, you can build and run the tests for both parts of your project by using the following command:
 
@@ -51,11 +51,7 @@ mvn compile exec:java -Prun-app
 mvn compile exec:java -Prun-demo
 ```
 
-##### Runnin your project
-
-```bash
-mvn exec:java -Dexec.mainClass="edu.norcocollege.cis18b.Week2.App"
-```
+You can use this to test each part of your assignment independently.
 
 ### FINAL SUBMISSIONS
 
@@ -121,7 +117,7 @@ There is no submission requirement for this part, but you should complete it bef
 
 You will now demonstrate your understanding by creating two Java files in your repository.
 
-**NOTE: All of your files should be placed in the `src` directory of your project (the one with the `CODE_GOES_HERE.md` file).
+**NOTE: All of your files should be placed in the subfolder for this package (namely, the `src/main/....` directory of your project (the one with the `CODE_GOES_HERE.md` file).
 
 ### File 1: LanguageBasicsReview.java
 
@@ -139,6 +135,8 @@ This file should compile and run.
 
 You may organize it however you like, but all required elements must be present.
 
+A template of this program can be found in the `src/main/java/edu/norcocollege/cis18b/week2/demo` folder.
+
 ### File 2: ModernFeaturesDemo.java
 
 Create a class that demonstrates modern Java features. Your program must include:
@@ -151,6 +149,8 @@ Create a class that demonstrates modern Java features. Your program must include
 * A text block (""")
 
 The purpose of this file is to ensure you are comfortable with features beyond Java 8.
+
+A template of this program can be found in the `src/main/java/edu/norcocollege/cis18b/week2/demo` folder.
 
 ### Submission Requirement
 Your PR should have the `src/LanguageBasicsReview.java` and `src/ModernFeaturesDemo.java` files, and they should pass all of the automated tests.
@@ -211,7 +211,9 @@ Then use a modern switch expression to return recommendations:
 
 #### Demonstration / Test Harness
 
-Create a main method that:
+The demonstration harness can be found in the `src/main/java/edu/norcocollege/cis18b/week2/alerts` directory.
+
+Update the main method that:
 
 * Creates multiple alerts
 * Adds them to the manager
@@ -265,6 +267,8 @@ You will be graded on:
 * Clean, readable structure
 * Proper use of Git and PR workflow
 * Completeness of required features
+
+For a more complete rubric, please see the rubric attached to this assignment in Canvas.
 
 ### Why This Matters
 
