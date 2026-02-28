@@ -95,24 +95,28 @@ public class LanguageBasicsReview
         // var (type inference) + object reference (shows OOP: b/c this is an object)
         var self = this;
 
+        // Demonstrate instance + overloaded methods
+        var sum2 = self.add(2, 3);
+        var sum3 = self.add(2, 3, 4);
+        System.out.println("-- Demonstrating the program runs with all features --");
+        System.out.println("add(2, 3) = " + sum2);
+        System.out.println("add(2, 3, 4) = " + sum3);
+        System.out.println("______________________");
+        System.out.println();
+
         // Control flow: loop
         for (var score : scores) 
             {
 
             // try/catch block
             try 
+            // Printing score and grade (calls static method that may throw exception)
             {
                 var grade = gradeFromScore(score);
-                var sum2 = self.add(2, 3);
-                var sum3 = self.add(2, 3, 4);
 
-                System.out.println(
-                        "Score: " + score
-                                + " | Grade: " + grade
-                                + " | add(2,3)=" + sum2
-                                + " | add(2,3,4)=" + sum3
+                System.out.println("Score: " + score + " | Grade: " + grade
+                + " |"
                 );
-
             } 
             catch (InvalidScoreException e) 
             {
