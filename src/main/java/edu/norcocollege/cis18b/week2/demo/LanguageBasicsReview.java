@@ -106,8 +106,7 @@ public class LanguageBasicsReview
 
         // Control flow: loop
         for (var score : scores) 
-            {
-
+        {
             // try/catch block
             try 
             // Printing score and grade (calls static method that may throw exception)
