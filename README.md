@@ -68,8 +68,8 @@ https://dev.java/download/
 If you are using GitHub Codespaces (recommended), verify the installed version by running:
 
 ```bash
-java -version >> java_version.txt
-javac -version >> javac_version.txt
+java -version 2&> java_version.txt
+javac -version 2&> javac_version.txt
 ```
 
 ### Submission Requirement
