@@ -12,6 +12,12 @@ package edu.norcocollege.cis18b.week2.alerts;
  *
  *  - (Optional stretch) Add validation in a compact constructor
  */
-public class SecurityAlert {
-    // TODO: Replace this entire class with a record
-}
+public record SecurityAlert
+(
+        String id,
+        String sourceSystem,
+        String severity,   
+        String description,
+        long timestamp
+)
+{}

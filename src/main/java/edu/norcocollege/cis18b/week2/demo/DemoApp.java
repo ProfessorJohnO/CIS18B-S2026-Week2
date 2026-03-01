@@ -17,40 +17,36 @@ package edu.norcocollege.cis18b.week2.demo;
  *  - Add simple timing (System.nanoTime) around each demo
  *  - Catch exceptions so one demo failing doesn’t stop the other
  */
-public class DemoApp {
+public class DemoApp 
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
 
-        System.out.println("========================================");
         System.out.println(" Week 1 Demo Harness");
-        System.out.println("========================================");
 
-        // ------------------------------------------------------------
         // Demo 1: Language Basics Review
-        // ------------------------------------------------------------
+
         System.out.println();
         System.out.println(">>> Demo 1: LanguageBasicsReview");
-        System.out.println("----------------------------------------");
+        System.out.println("-------------------------------------");
 
         var basics = new LanguageBasicsReview();
-        basics.demonstrate();
+        basics.demonstrate(); // correct
 
-        // ------------------------------------------------------------
         // Demo 2: Modern Features Demo
-        // ------------------------------------------------------------
+
         System.out.println();
         System.out.println(">>> Demo 2: ModernFeaturesDemo");
-        System.out.println("----------------------------------------");
+        System.out.println("------------------------------------");
 
         var modern = new ModernFeaturesDemo();
-        modern.demonstrate();
+        modern.runDemo(); // changed from demonstrate() to runDemo()
 
-        // ------------------------------------------------------------
         // Done
-        // ------------------------------------------------------------
+
         System.out.println();
-        System.out.println("========================================");
         System.out.println(" Done. Review output above.");
-        System.out.println("========================================");
+
     }
 }
