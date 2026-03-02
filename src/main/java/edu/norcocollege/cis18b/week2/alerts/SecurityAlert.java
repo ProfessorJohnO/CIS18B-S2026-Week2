@@ -1,5 +1,13 @@
 package edu.norcocollege.cis18b.week2.alerts;
 
+public record SecurityAlert(
+    String id,
+    String sourceSystem,
+    String severity,
+    String description,
+    long timestamp
+    ){}
+
 /**
  * TODO:
  *  - Convert this class into a Java 17+ record
