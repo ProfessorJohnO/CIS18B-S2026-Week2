@@ -40,3 +40,23 @@ String armorDescription = switch (armorLevel) {
             case "heavy" -> "This Ankylosaurus is heavily armored!";
             default -> "Unknown armor level.";
 };
+
+System.out.println(armorDescription);
+
+        // ----------------------------
+        // For Loop
+        // ----------------------------
+        System.out.println("Counting tail swings:");
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Swing #" + i);
+        }
+
+        // ----------------------------
+        // List.of()
+        // ----------------------------
+        List<String> features = List.of("Armor Plates", "Tail Club", "Beaked Mouth");
+
+        System.out.println("Ankylosaurus features:");
+        for (String feature : features) {
+            System.out.println(feature);
+        }
