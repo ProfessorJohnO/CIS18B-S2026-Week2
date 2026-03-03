@@ -23,4 +23,9 @@ public class LanguageBasicsReview {
     {
         System.out.println("This is an instance method.\n");
     }
+
+    public static void staticMethod()
+    {
+        System.out.println("This is a static method!\n");
+    }
 }

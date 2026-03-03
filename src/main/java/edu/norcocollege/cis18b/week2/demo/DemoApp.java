@@ -34,6 +34,7 @@ public class DemoApp {
 
         var basics = new LanguageBasicsReview();
         basics.InstanceMethod();
+        LanguageBasicsReview.staticMethod();
         basics.demonstrate();
 
         // ------------------------------------------------------------
