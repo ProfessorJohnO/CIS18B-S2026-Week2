@@ -60,3 +60,19 @@ System.out.println(armorDescription);
         for (String feature : features) {
             System.out.println(feature);
         }
+         // ----------------------------
+        // Calling a Method
+        // ----------------------------
+        int totalPlates = calculateArmorPlates(20, 3);
+        System.out.println("Estimated armor plates: " + totalPlates);
+
+        // ----------------------------
+        // Basic OOP (Objects)
+        // ----------------------------
+        Ankylosaurus dino1 = new Ankylosaurus("Spike", false);
+        dino1.speak();
+
+        ArmoredAnkylosaurus dino2 = new ArmoredAnkylosaurus("Crusher");
+        dino2.speak();
+        dino2.swingTail();
+    }
