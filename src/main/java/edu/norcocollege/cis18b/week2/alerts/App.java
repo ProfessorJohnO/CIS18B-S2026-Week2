@@ -86,7 +86,7 @@ public class App
                 found.isPresent()
         ));
 
-        // Demonstrate calling a manager method (severity recommendation)
+        // Demonstrate calling a manager method that displays severity recommendation
         found.ifPresent(a -> System.out.println(
                 "Recommendation for " + a.id() + " (" + a.severity() + "): "
                         + manager.getSeverityRecommendation(a)
