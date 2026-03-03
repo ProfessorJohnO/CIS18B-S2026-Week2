@@ -1,21 +1,31 @@
 package edu.norcocollege.cis18b.week2.demo;
 
+import java.util.list;
 /**
- * This class is a review of basic Java language features. It’s not
- * meant to be comprehensive, but it should cover the basics and provide
- * a refresher on syntax and concepts.
- *
- * TODO:
- *  - Demonstrate variable declarations and types
- *  - Demonstrate control flow (if, switch, loops)
- *  - Demonstrate methods and parameters
- *  - Demonstrate basic OOP concepts (classes, objects, inheritance)
+ * Language Basics Review
+ * Topic: Ankylosaur
  */
 public class LanguageBasicsReview {
 
     public void demonstrate() {
-        // TODO: Implement demonstration of basic Java features
-        // NOTE: Remove the exception below when you've implemented your code
-        throw new UnsupportedOperationException("Not implemented yet");
+//--------------
+// Variable Declarations
+// -------------
+int age = 68; //million years ago
+double length = 6.25; //meters
+boolean isCarnivore = false;
+String dinosaurName = "Ankylosaurus";
+var tailClubs =1; // type inferred as int
+
+System.out.println("Dinosaur Name:" +dinosaurName));
+System.out.println("Age:" + age + "million years ago");
+System.out.println("Length: " + length + "meters");
+System.out.println("Carnivore: " + isCarnivore);
+System.out.println("tailClubs: " + tailClubs);
+//--------------
+// if statement
+//--------------
+
+
     }
 }
