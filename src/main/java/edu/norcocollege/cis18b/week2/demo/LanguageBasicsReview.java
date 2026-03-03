@@ -25,7 +25,18 @@ System.out.println("tailClubs: " + tailClubs);
 //--------------
 // if statement
 //--------------
-
-
-    }
+if (isCarnivore) {
+    System.out.println(dinosaurName + "eats neat.");
+} else {
+    System.out.println(dinosaurName + " eats plants.");
 }
+//------
+// Switch expres(modern)
+//------
+String armorLevel = "heavy";
+String armorDescription = switch (armorLevel) {
+            case "light" -> "This Ankylosaurus has light armor.";
+            case "medium" -> "This Ankylosaurus has medium armor.";
+            case "heavy" -> "This Ankylosaurus is heavily armored!";
+            default -> "Unknown armor level.";
+};
