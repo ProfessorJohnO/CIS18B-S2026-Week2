@@ -76,3 +76,39 @@ System.out.println(armorDescription);
         dino2.speak();
         dino2.swingTail();
     }
+    // Method with parameters and return value
+    public int calculateArmorPlates(int rows, int platesPerRow) {
+        return rows * platesPerRow;
+    }
+
+    // ----------------------------
+    // Basic Class
+    // ----------------------------
+    static class Ankylosaurus {
+        String name;
+        boolean carnivore;
+
+        public Ankylosaurus(String name, boolean carnivore) {
+            this.name = name;
+            this.carnivore = carnivore;
+        }
+
+        public void speak() {
+            System.out.println(name + " makes a low dinosaur sound.");
+        }
+    }
+
+    // ----------------------------
+    // Inheritance Example
+    // ----------------------------
+    static class ArmoredAnkylosaurus extends Ankylosaurus {
+
+        public ArmoredAnkylosaurus(String name) {
+            super(name, false); // Ankylosaurus is herbivore
+        }
+
+        public void swingTail() {
+            System.out.println(name + " swings its heavy tail club!");
+        }
+    }
+}
