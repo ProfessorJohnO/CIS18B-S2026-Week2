@@ -33,6 +33,7 @@ public class DemoApp {
         System.out.println("----------------------------------------");
 
         var basics = new LanguageBasicsReview();
+        basics.InstanceMethod();
         basics.demonstrate();
 
         // ------------------------------------------------------------

@@ -18,4 +18,9 @@ public class LanguageBasicsReview {
         // NOTE: Remove the exception below when you've implemented your code
         throw new UnsupportedOperationException("Not implemented yet");
     }
+
+    public void InstanceMethod()
+    {
+        System.out.println("This is an instance method.\n");
+    }
 }
