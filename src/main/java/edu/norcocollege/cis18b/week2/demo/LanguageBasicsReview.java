@@ -1,25 +1,3 @@
-//package edu.norcocollege.cis18b.week2.demo;
-
-/**
- * This class is a review of basic Java language features. It’s not
- * meant to be comprehensive, but it should cover the basics and provide
- * a refresher on syntax and concepts.
- *
- * TODO:
- *  - Demonstrate variable declarations and types
- *  - Demonstrate control flow (if, switch, loops)
- *  - Demonstrate methods and parameters
- *  - Demonstrate basic OOP concepts (classes, objects, inheritance)
- */
-//public class LanguageBasicsReview {
-
-    //public void demonstrate() {
-        // TODO: Implement demonstration of basic Java features
-        // NOTE: Remove the exception below when you've implemented your code
-        //throw new UnsupportedOperationException("Not implemented yet");
-    //}
-//}
-
 
 package edu.norcocollege.cis18b.week2.demo;
 
@@ -51,9 +29,9 @@ public class LanguageBasicsReview {
 
         // Variable declarations and types
         int age = 20;
-        double gpa = 3.8;
+        double gpa = 3.7;
         boolean isStudent = true;
-        var school = "Norco College";   // var usage
+        var school = "Norco College";   
 
         System.out.println("Age: " + age);
         System.out.println("GPA: " + gpa);
@@ -61,9 +39,9 @@ public class LanguageBasicsReview {
         System.out.println("School: " + school);
 
         // List.of(...)
-        var names = List.of("Aisha", "Omar", "Noor");
+        var names = List.of("Aisha", "Ben", "Ali");
 
-        // Control flow (if + loop)
+        // Control flow 
         if (!names.isEmpty()) {
             System.out.println("We have names in the list.");
         }
@@ -122,7 +100,7 @@ public class LanguageBasicsReview {
         }
     }
 
-    // Basic OOP classes
+    
     private static class Animal {
         void speak() {
             System.out.println("Animal sound");
