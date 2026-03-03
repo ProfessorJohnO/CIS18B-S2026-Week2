@@ -8,12 +8,14 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SecurityAlertManagerTest {
+class SecurityAlertManagerTest 
+{
 
     private SecurityAlertManager manager;
 
     @BeforeEach
-    void setUp() {
+    void setUp() 
+    {
         manager = new SecurityAlertManager();
     }
 
@@ -23,12 +25,14 @@ class SecurityAlertManagerTest {
             String severity,
             String description,
             long timestamp
-    ) {
+    ) 
+    {
         return new SecurityAlert(id, sourceSystem, severity, description, timestamp);
     }
 
     @Test
-    void addAlert_thenFindById_returnsAlert() {
+    void addAlert_thenFindById_returnsAlert() 
+    {
         var a1 = alert("A-001", "web-gateway", "HIGH", "Suspicious login attempt", 1700000000L);
 
         manager.addAlert(a1);
@@ -39,13 +43,15 @@ class SecurityAlertManagerTest {
     }
 
     @Test
-    void findById_missingId_returnsEmptyOptional() {
+    void findById_missingId_returnsEmptyOptional() 
+    {
         Optional<SecurityAlert> found = manager.findById("DOES-NOT-EXIST");
         assertTrue(found.isEmpty(), "Expected Optional.empty for missing ID");
     }
 
     @Test
-    void findBySeverity_returnsOnlyMatchingSeverity() {
+    void findBySeverity_returnsOnlyMatchingSeverity() 
+    {
         var low = alert("A-100", "endpoint-agent", "LOW", "Minor anomaly", 1700000100L);
         var high1 = alert("A-101", "db", "HIGH", "SQL injection pattern", 1700000200L);
         var high2 = alert("A-102", "web-gateway", "HIGH", "Brute force detected", 1700000300L);
@@ -68,7 +74,8 @@ class SecurityAlertManagerTest {
     }
 
     @Test
-    void findBySeverity_noMatches_returnsEmptyList() {
+    void findBySeverity_noMatches_returnsEmptyList() 
+    {
         var low = alert("A-200", "endpoint-agent", "LOW", "Minor anomaly", 1700000100L);
         manager.addAlert(low);
 
@@ -78,7 +85,8 @@ class SecurityAlertManagerTest {
     }
 
     @Test
-    void removeAlert_existingId_returnsTrue_andAlertIsGone() {
+    void removeAlert_existingId_returnsTrue_andAlertIsGone() 
+    {
         var a1 = alert("A-300", "web-gateway", "MEDIUM", "Unusual traffic spike", 1700000000L);
         manager.addAlert(a1);
 
@@ -90,13 +98,15 @@ class SecurityAlertManagerTest {
     }
 
     @Test
-    void removeAlert_missingId_returnsFalse() {
+    void removeAlert_missingId_returnsFalse() 
+    {
         boolean removed = manager.removeAlert("NOPE");
         assertFalse(removed, "Expected removeAlert to return false for missing ID");
     }
 
     @Test
-    void getSeverityRecommendation_returnsExpectedMessages() {
+    void getSeverityRecommendation_returnsExpectedMessages() 
+    {
         var low = alert("A-401", "sensor", "LOW", "Low severity test", 1L);
         var med = alert("A-402", "sensor", "MEDIUM", "Medium severity test", 1L);
         var high = alert("A-403", "sensor", "HIGH", "High severity test", 1L);
@@ -111,7 +121,8 @@ class SecurityAlertManagerTest {
     }
 
     @Test
-    void getSeverityRecommendation_unknownSeverity_throwsOrReturnsDefault() {
+    void getSeverityRecommendation_unknownSeverity_throwsOrReturnsDefault() 
+    {
         var weird = alert("A-500", "sensor", "WILD", "Unknown severity", 1L);
 
         assertThrows(IllegalArgumentException.class,
