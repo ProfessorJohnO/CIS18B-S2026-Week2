@@ -1,5 +1,6 @@
 package edu.norcocollege.cis18b.week2.alerts;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,52 +14,53 @@ import java.util.Optional;
  */
 public class SecurityAlertManager {
 
-    // TODO: Declare a private List<SecurityAlert> to store alerts
-
-    /**
-     * TODO:
-     *  - Reject null
-     *  - Add alert to internal list
-     */
+    private final List<SecurityAlert> alerts = new ArrayList<>();
+    
     public void addAlert(SecurityAlert alert) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(alert==null){
+            throw new IllegalArgumentException("Alert cannot be null");
+        }
+        alerts.add(alert);
     }
 
-    /**
-     * TODO:
-     *  - Return Optional.empty() if id is null
-     *  - Use streams to find first match
-     */
+    
     public Optional<SecurityAlert> findById(String id) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(id==null)
+            {
+                return Optional.empty();
+            }
+            return alerts.stream()
+                    .filter(alert -> alert.id().equals(id))
+                    .findFirst();
     }
 
-    /**
-     * TODO:
-     *  - Return empty list if severity is null
-     *  - Use streams to filter by severity
-     */
+    
     public List<SecurityAlert> findBySeverity(String severity) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(severity==null)
+        {
+            return List.of();
+        }
+        return alerts.stream()
+                .filter(alert -> alert.severity().equalsIgnoreCase(severity))
+                .toList();
     }
 
-    /**
-     * TODO:
-     *  - Remove alert by ID
-     *  - Return true if removed, false otherwise
-     */
+    
     public boolean removeAlert(String id) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return alerts.removeIf(alert -> alert.id().equals(id));
     }
 
-    /**
-     * TODO:
-     *  - Reject null alert
-     *  - Use pattern matching with instanceof
-     *  - Use modern switch expression
-     *  - Throw IllegalArgumentException for unknown severity
-     */
+    
     public String getSeverityRecommendation(SecurityAlert alert) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        if(alert==null)
+        {
+            throw new IllegalArgumentException("Alert cannot be null");
+        }
+        return switch (alert.severity()) {
+            case "HIGH" -> "Immediate action required";
+            case "MEDIUM" -> "Investigate and take action";
+            case "LOW" -> "Monitor and review";
+            default -> throw new IllegalArgumentException("Unknown severity: " + alert.severity());
+        };
     }
 }
