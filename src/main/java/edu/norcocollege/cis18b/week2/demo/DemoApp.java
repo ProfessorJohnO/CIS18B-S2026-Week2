@@ -33,9 +33,21 @@ public class DemoApp {
         System.out.println("----------------------------------------");
 
         var basics = new LanguageBasicsReview();
-        basics.InstanceMethod();
-        LanguageBasicsReview.staticMethod();
         basics.demonstrate();
+
+        // call Instance Method
+        basics.InstanceMethod();
+        
+        // call Static Method
+        LanguageBasicsReview.staticMethod();
+
+        // call Overloaded Method
+        LanguageBasicsReview calc = new LanguageBasicsReview();
+        
+            calc.calc(25);
+            calc.calc(3.14);
+            calc.calc(144, 12);
+            calc.calc(10, 5, 15);
 
         // ------------------------------------------------------------
         // Demo 2: Modern Features Demo
