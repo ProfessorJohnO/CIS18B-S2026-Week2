@@ -49,6 +49,9 @@ public class DemoApp {
             calc.calc(144, 12);
             calc.calc(10, 5, 15);
 
+        // call listof method
+        basics.Listof();
+
         // ------------------------------------------------------------
         // Demo 2: Modern Features Demo
         // ------------------------------------------------------------
