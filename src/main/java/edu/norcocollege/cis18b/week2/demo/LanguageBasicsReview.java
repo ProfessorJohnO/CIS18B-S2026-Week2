@@ -1,5 +1,6 @@
 package edu.norcocollege.cis18b.week2.demo;
 
+import java.time.Month;
 import java.util.List;
 
 /**
@@ -112,4 +113,24 @@ public class LanguageBasicsReview {
     }
 
     // Modern switch expression
+    public void switchExpression()
+    {
+        String Month = "August";
+
+        String Season = switch (Month)
+        {
+            case "December", "January", "February" -> "Winter.";
+
+            case "March", "April", "May" -> "Spring.";
+
+            case "June", "July", "August" -> "Summer.";
+
+            case "September", "October", "November" -> "Fall.";
+
+            default -> "Not a month.";
+        };
+
+        System.out.println("The Season is " + Season + "\n");
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+    }    
 }

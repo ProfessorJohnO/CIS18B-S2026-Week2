@@ -67,7 +67,7 @@ public class DemoApp {
             }
 
         // call modern switch expression
-        
+        basics.switchExpression();
 
 
         // ------------------------------------------------------------
