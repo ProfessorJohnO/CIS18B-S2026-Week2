@@ -79,14 +79,37 @@ public class LanguageBasicsReview {
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
     }
 
-    // List.of(...)
+    // List.of(...)/var
     public void Listof()
 	{
-	    List<String> stringList = List.of("seven", "ate", "nine");
+        // use of var
+	    var stringList = List.of("seven", "ate", "nine");
 	    
 	    System.out.println("Why is six afraid of seven?\n"); 
 	    System.out.println("Because " + stringList);
         System.out.println("\n");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
 	}
+
+    // Custom Exception Class
+    class NegNumException extends Exception
+    {
+        public NegNumException(String message)
+        {
+            super (message);
+        }
+    }
+    
+    public void negNum(int num) throws NegNumException
+    {
+        if (num <= 0)
+        {
+            throw new NegNumException("Number must be greater than 0.");
+        }
+
+        System.out.println("Positive number: " + num + "\n");
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+    }
+
+    // Modern switch expression
 }
