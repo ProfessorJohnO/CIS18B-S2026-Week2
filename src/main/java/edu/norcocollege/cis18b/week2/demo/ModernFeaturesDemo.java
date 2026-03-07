@@ -10,6 +10,21 @@ public class ModernFeaturesDemo {
     public void demonstrate() {
         // TODO: Implement demonstration of modern Java features
         // NOTE: Remove the exception below when you've implemented your code
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
+
+    // record type
+    public record Cards(String b, String r) 
+    { 
+        public Cards
+        {
+            System.out.println("\nA deck of cards has both " + b + " and " + r + " cards.\n");
+            System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+        }
+    }
+
+    Cards C = new Cards("black", "red");
+
+    // 
+
 }

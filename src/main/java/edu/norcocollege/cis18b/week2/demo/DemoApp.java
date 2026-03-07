@@ -1,5 +1,7 @@
 package edu.norcocollege.cis18b.week2.demo;
 
+import edu.norcocollege.cis18b.week2.demo.LanguageBasicsReview.NegNumException;
+
 /**
  * DemoApp is a simple test harness to run the Week 1 demo classes:
  * - LanguageBasicsReview
@@ -34,6 +36,39 @@ public class DemoApp {
 
         var basics = new LanguageBasicsReview();
         basics.demonstrate();
+
+        // call Instance Method
+        basics.InstanceMethod();
+        
+        // call Static Method
+        LanguageBasicsReview.staticMethod();
+
+        // call Overloaded Method
+        LanguageBasicsReview calc = new LanguageBasicsReview();
+        
+            calc.calc(25);
+            calc.calc(3.14);
+            calc.calc(144, 12);
+            calc.calc(10, 5, 15);
+
+        // call listof method
+        basics.Listof();
+
+        // call try/catch with custom exception
+        try
+        {
+            basics.negNum(-4);
+        }
+            catch(NegNumException e)
+            {
+                System.out.println("Caught Exception: " + e.getMessage());
+                System.out.println("\n");
+                System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+            }
+
+        // call modern switch expression
+        basics.switchExpression();
+
 
         // ------------------------------------------------------------
         // Demo 2: Modern Features Demo
