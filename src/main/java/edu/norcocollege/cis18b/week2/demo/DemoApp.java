@@ -1,6 +1,9 @@
 package edu.norcocollege.cis18b.week2.demo;
 
+import java.util.Optional;
+
 import edu.norcocollege.cis18b.week2.demo.LanguageBasicsReview.NegNumException;
+import edu.norcocollege.cis18b.week2.demo.ModernFeaturesDemo.Cards;
 
 /**
  * DemoApp is a simple test harness to run the Week 1 demo classes:
@@ -88,7 +91,14 @@ public class DemoApp {
         // call switch expression
         modern.expression();
 
-        // 
+        // call optional
+        String b = "black";
+        String r = "red";
+
+        Optional<Cards> c = Cards.of(b, r);
+        c.ifPresent(color -> System.out.println("This is the use of optional.\n\n\n"
+            + "A deck of cards has both " + b + " and " + r + " cards.\n\n" 
+            + "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"));
 
         // ------------------------------------------------------------
         // Done
