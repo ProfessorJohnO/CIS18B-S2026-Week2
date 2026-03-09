@@ -80,6 +80,16 @@ public class DemoApp {
         var modern = new ModernFeaturesDemo();
         modern.demonstrate();
 
+        // call pattern matching instanceof
+        String phone = "Samsung";
+
+        modern.cell(phone);
+
+        // call switch expression
+        modern.expression();
+
+        // 
+
         // ------------------------------------------------------------
         // Done
         // ------------------------------------------------------------

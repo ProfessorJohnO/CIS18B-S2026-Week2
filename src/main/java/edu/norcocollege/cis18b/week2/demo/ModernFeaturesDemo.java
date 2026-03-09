@@ -25,6 +25,36 @@ public class ModernFeaturesDemo {
 
     Cards C = new Cards("black", "red");
 
-    // 
+    // pattern matching instanceof
+    public void cell(Object phone)
+    {
+        if(phone instanceof String s)
+        {
+            System.out.println("You have a(n) " + s + " phone.\n");
+            System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+        }
+    }
 
+    // switch expression
+    public void expression()
+    {
+        String Genre = "action";
+
+        String Movie = switch (Genre)
+        {
+            case "horror" -> "The Conjuring.\n";
+
+            case "action" -> "John Wick";
+
+            case "comedy" -> "Ted";
+
+            case "animation" -> "How To Train You Dragon";
+
+            default -> "Any Movie.";
+
+        };
+
+        System.out.println("You could watch " + Movie + "\n");
+
+    }
 }

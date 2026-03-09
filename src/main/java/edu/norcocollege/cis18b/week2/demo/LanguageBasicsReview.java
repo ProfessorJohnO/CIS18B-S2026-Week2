@@ -82,10 +82,12 @@ public class LanguageBasicsReview {
 
     // List.of(...)/var
     public void Listof()
-	{
+	{        
         // use of var
 	    var stringList = List.of("seven", "ate", "nine");
 	    
+        System.out.println("This is a Listof method using var\n\n");
+
 	    System.out.println("Why is six afraid of seven?\n"); 
 	    System.out.println("Because " + stringList);
         System.out.println("\n");
@@ -103,10 +105,13 @@ public class LanguageBasicsReview {
     
     public void negNum(int num) throws NegNumException
     {
+        System.out.println("This is a custom exception in a try/catch block.\n\n");
+
         if (num <= 0)
         {
             throw new NegNumException("Number must be greater than 0.");
         }
+
 
         System.out.println("Positive number: " + num + "\n");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
@@ -130,6 +135,8 @@ public class LanguageBasicsReview {
             default -> "Not a month.";
         };
 
+        System.out.println("This is a modern switch.\n\n");
+        
         System.out.println("The Season is " + Season + "\n");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
     }    
