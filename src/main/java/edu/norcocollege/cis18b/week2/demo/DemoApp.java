@@ -1,9 +1,11 @@
 package edu.norcocollege.cis18b.week2.demo;
 
+import java.util.List;
 import java.util.Optional;
 
 import edu.norcocollege.cis18b.week2.demo.LanguageBasicsReview.NegNumException;
 import edu.norcocollege.cis18b.week2.demo.ModernFeaturesDemo.Cards;
+import edu.norcocollege.cis18b.week2.demo.ModernFeaturesDemo.Game;
 
 /**
  * DemoApp is a simple test harness to run the Week 1 demo classes:
@@ -99,6 +101,28 @@ public class DemoApp {
         c.ifPresent(color -> System.out.println("This is the use of optional.\n\n\n"
             + "A deck of cards has both " + b + " and " + r + " cards.\n\n" 
             + "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n"));
+
+        // stream operation
+        List<Game> games  = List.of(
+            new Game(2017, "Fortnite"),
+            new Game(2019, "Apex Legends"),
+            new Game(2020, "Call of Duty: Warzone"),
+            new Game(2021, "Super Animal Royale")
+        );
+
+        int year = 2017;
+        String name =
+            games.stream()
+                .filter(game -> game.year() == year)
+                .findFirst()
+                .map(Game::name)
+                .orElse("UNKNOWN");
+        System.out.println("This is a stream operation.\n\n\n" + 
+            "Name of game with year of release \"" + name + "\" : " + year + "\n\n" +
+            "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+
+        // call text block
+        modern.textBlock();        
 
         // ------------------------------------------------------------
         // Done

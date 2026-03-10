@@ -1,6 +1,7 @@
 package edu.norcocollege.cis18b.week2.demo;
 
 import java.lang.StackWalker.Option;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -80,6 +81,25 @@ public class ModernFeaturesDemo {
         System.out.println("You could watch a(n) " + Genre + " movie like " + Movie + "\n");
         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
     }
-
     
+    // record for stream operation
+    record Game(int year, String name){}
+
+    // text block
+    public void textBlock()
+    {
+        String textBlock = """
+        This
+           is
+            a
+          text
+        block.
+        
+        
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        
+        """;
+
+        System.out.println(textBlock);
+    }
 }
