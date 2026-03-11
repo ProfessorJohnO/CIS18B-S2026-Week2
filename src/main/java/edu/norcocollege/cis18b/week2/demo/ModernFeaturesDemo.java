@@ -1,6 +1,5 @@
 package edu.norcocollege.cis18b.week2.demo;
 
-import java.awt.event.ActionEvent;
 import java.util.stream.Stream;
 
 import javax.swing.*;
@@ -49,6 +48,7 @@ public class ModernFeaturesDemo {
             }
         }
 
+        @SuppressWarnings("deprecation")
         public void demonstrate() {
 
         Stream<String> basicStream = Stream.of("First", "second", "Third", "fourth", "Fifth");
