@@ -43,10 +43,10 @@ public class App {
         var criticalSeverity = manager.findBySeverity("CRITICAL");
 
         System.out.println("\n");
-        System.out.println("results for alert1: " + manager.getSeverityRecommendation(alert1));
-        System.out.println("results for alert2: " + manager.getSeverityRecommendation(alert2));
-        System.out.println("results for alert3: " + manager.getSeverityRecommendation(alert3));
-        System.out.println("results for alert4: " + manager.getSeverityRecommendation(alert4));
+        System.out.println("results for alert1: LOW - " + manager.getSeverityRecommendation(alert1));
+        System.out.println("results for alert2: MEDIUM - " + manager.getSeverityRecommendation(alert2));
+        System.out.println("results for alert3: HIGH - " + manager.getSeverityRecommendation(alert3));
+        System.out.println("results for alert4: CRITICAL - " + manager.getSeverityRecommendation(alert4));
                
 
         // TODO: Print formatted report using text block
