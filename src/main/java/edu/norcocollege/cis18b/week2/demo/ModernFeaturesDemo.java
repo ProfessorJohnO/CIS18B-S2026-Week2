@@ -1,15 +1,15 @@
 package edu.norcocollege.cis18b.week2.demo;
+import java.util.Optional;
 
-/**
- * This class is a review of basic Java language features. It’s not
- * meant to be comprehensive, but it should cover the basics and provide
- * a refresher on syntax and concepts.
- **/
 public class ModernFeaturesDemo {
-
-    public void demonstrate() {
-        // TODO: Implement demonstration of modern Java features
-        // NOTE: Remove the exception below when you've implemented your code
-        throw new UnsupportedOperationException("Not implemented yet");
+    public record User(String name) {}
+    public static void main(String[] args) {
+        Object obj = new User("Student");
+        if (obj instanceof User u) System.out.println("Hello, " + u.name());
+        
+        System.out.println("""
+            Multi-line
+            Text Block
+            """);
     }
 }

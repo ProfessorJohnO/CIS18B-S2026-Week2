@@ -1,21 +1,17 @@
 package edu.norcocollege.cis18b.week2.demo;
+import java.util.List;
 
-/**
- * This class is a review of basic Java language features. It’s not
- * meant to be comprehensive, but it should cover the basics and provide
- * a refresher on syntax and concepts.
- *
- * TODO:
- *  - Demonstrate variable declarations and types
- *  - Demonstrate control flow (if, switch, loops)
- *  - Demonstrate methods and parameters
- *  - Demonstrate basic OOP concepts (classes, objects, inheritance)
- */
 public class LanguageBasicsReview {
+    static class DemoException extends Exception { public DemoException(String m) { super(m); } }
 
-    public void demonstrate() {
-        // TODO: Implement demonstration of basic Java features
-        // NOTE: Remove the exception below when you've implemented your code
-        throw new UnsupportedOperationException("Not implemented yet");
+    public static void main(String[] args) {
+        var items = List.of("Java", "Maven");
+        try {
+            if (items.isEmpty()) throw new DemoException("Empty!");
+            items.forEach(System.out::println);
+        } catch (DemoException e) { System.err.println(e.getMessage()); }
+        
+        String result = switch (1) { case 1 -> "Working"; default -> "Error"; };
+        System.out.println(result);
     }
 }
