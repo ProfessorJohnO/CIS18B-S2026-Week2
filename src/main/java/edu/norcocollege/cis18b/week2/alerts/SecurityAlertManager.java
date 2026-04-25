@@ -1,5 +1,5 @@
 package edu.norcocollege.cis18b.week2.alerts;
-
+import java.util.Optional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,48 +11,30 @@ public class SecurityAlertManager {
      
         alerts.add(alert);
     }
-    public SecurityAlert findById(String id){
-
-        for (int i =0; i < alerts.size(); i++){
-            SecurityAlert current = alerts.get(i);
-
-            if (current.id().equals(id)){
-
-                return current;
-            }
-        }
-            return null;
+    //Modern: Returns a "box" (Optional) tha might have an alert 
+    public Optional<SecurityAlert> findByID(String Id){
+        return alerts.stream().filter(a -> a.id().equalsIgnoreCase(Id)).findFirst();
     }
-    public List<SecurityAlert> findBySeverity(String severity) {
-        List<SecurityAlert> matches = new ArrayList<>();
-        for(SecurityAlert alert: alerts ) {
-            if(alert.severity().equalsIgnoreCase(severity)) {
-                matches.add(alert);
-            }
-        }
-        return matches;
+    // uses a "pipeline" to filter the list
+    public List<SecurityAlert> findBySeverity(String severity){
+        return alerts.stream().filter(a -> a.severity().equalsIgnoreCase(severity)).toList();
     }
+    
     public String getRecommendation(SecurityAlert alert){
-            //guard clause checks if alert is null before anything else. 
-            if(alert == null) {
-                return "ERROR: no data provided.";
-            }
+        if(alert == null) return "ERROR: No alert provided.";
+        return switch (alert.severity().toUpperCase()) {
+            case "LOW"      -> "Log and monitor.";
+            case "MEDIUM"   -> "Investigate within 24 hours.";
+            case "HIGH"     -> "Escalate to Enginnering";
+            case "CRITICAL" -> "Immediate incident response required";
+            default         ->  "Unknown security level";
 
-            String level = alert.severity();
-            if(level.equalsIgnoreCase("CRITICAL")){
-                return "SHUT DOWN SYSTEM: Potential breach in progress.";
-            }
-            else if (level.equalsIgnoreCase("HIGH")){
-                return "ESCALATE: Contact security engineering.";
-            }
-            else if (level.equalsIgnoreCase("MEDIUM")){
-                return "INVESTIGATE: Review logs within 24 hours.";
-            }
-            else {
-                return "MONITOR: No immediate action needed.";
-            }
-
+        };
         }
+        public int getTotalAlertCount(){
+            return alerts.size();
+        }
+    }
+        
 
-}
-
+    
